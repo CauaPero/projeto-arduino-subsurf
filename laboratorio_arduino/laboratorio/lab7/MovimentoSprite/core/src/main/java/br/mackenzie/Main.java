@@ -1,7 +1,5 @@
 package br.mackenzie;
 
-import br.mackenzie.telas.GameScreen;
-import br.mackenzie.telas.MenuScreen;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
