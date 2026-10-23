@@ -1,4 +1,4 @@
-package br.mackenzie;
+package br.mackenzie.objetos;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;

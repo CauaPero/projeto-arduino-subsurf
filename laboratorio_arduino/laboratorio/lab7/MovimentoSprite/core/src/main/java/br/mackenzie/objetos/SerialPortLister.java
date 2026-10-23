@@ -1,4 +1,4 @@
-package br.mackenzie;
+package br.mackenzie.objetos;
 
 import com.fazecast.jSerialComm.SerialPort;
 
