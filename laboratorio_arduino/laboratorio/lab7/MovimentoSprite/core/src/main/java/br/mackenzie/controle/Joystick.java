@@ -15,4 +15,8 @@ public class Joystick {
 
         
     }
+
+    public float getEixo() {
+        return eixo;
+    }
 }
