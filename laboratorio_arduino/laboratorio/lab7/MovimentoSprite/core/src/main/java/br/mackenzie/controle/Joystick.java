@@ -17,7 +17,14 @@ public class Joystick {
             eixo -= 1.2f * dt;
         } else if (direita && !esquerda) {
             eixo += 1.2f * dt;
+        } else if (eixo > 0f) {
+            eixo = Math.max(0f, eixo - 3f * dt);
+        } else {
+            eixo = Math.min(0f, eixo + 3f * dt);
         }
+
+        if (eixo < -1f) eixo = -1f;
+        if (eixo > 1f) eixo = 1f;
     }
 
     public float getEixo() {
