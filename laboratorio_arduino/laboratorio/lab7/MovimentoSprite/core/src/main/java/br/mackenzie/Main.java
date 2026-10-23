@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
 
 public class Main extends Game {
 
@@ -29,7 +28,6 @@ public class Main extends Game {
     public Sound perdaSound;
     public Sound erroSound;
 
-
     @Override
     public void create() {
         batch = new SpriteBatch();
@@ -46,19 +44,13 @@ public class Main extends Game {
             new Texture("morango.png")
         };
 
-        acertoSound = Gdx.audio.newSound(Gdx.files.internal("acerto.wav"));
-        perdaSound = Gdx.audio.newSound(Gdx.files.internal("fruta_perdida.wav"));
-        erroSound = Gdx.audio.newSound(Gdx.files.internal("erro.wav"));
-
-    
+        acertoSound = Gdx.audio.newSound(Gdx.files.internal("acerto.mp3"));
+        perdaSound = Gdx.audio.newSound(Gdx.files.internal("fruta_perdida.mp3"));
+        erroSound = Gdx.audio.newSound(Gdx.files.internal("erro.mp3"));
     }
 
-    
     @Override
     public void dispose() {
-        if (getScreen() != null) {
-            getScreen().dispose();
-        }
         batch.dispose();
         shapeRenderer.dispose();
         font.dispose();
