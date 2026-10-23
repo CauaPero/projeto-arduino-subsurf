@@ -8,4 +8,8 @@ public class Coco extends Fruta {
         super(texture, x, y, tamanho, velocidadeQueda, velocidadeX);
     }
 
+    @Override
+    public int getPontos() {
+        return -15;
+    }
 }
