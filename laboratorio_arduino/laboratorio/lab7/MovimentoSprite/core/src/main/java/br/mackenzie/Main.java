@@ -57,6 +57,15 @@ public class Main extends Game {
         calibracao = new Calibracao();
     }
 
+    public void iniciarJogo(int nivel) {
+        trocarTela(new GameScreen(this, nivel));
+    }
+
+    private void trocarTela(Screen nova) {
+        telaAntiga = getScreen();
+        setScreen(nova);
+    }
+
     @Override
     public void render() {
         super.render();
