@@ -25,4 +25,24 @@ public class Calibracao {
     public float getLimiteDireito() {
         return limiteDireito;
     }
+
+    // recebe o valor do joystick (-1 a +1) e devolve a posicao da cesta (-1 a +1)
+    // ate 50% do limite: 0 (centro); de 50% a 100%: vai do centro ate a borda
+    public float getPosicao(float eixo) {
+        float limite = limiteDireito;
+        if (eixo < 0f) {
+            limite = limiteEsquerdo;
+        }
+
+        float proporcao = Math.abs(eixo) / limite;
+        if (proporcao < LIMIAR) {
+            return 0f;
+        }
+
+        float posicao = MathUtils.clamp((proporcao - LIMIAR) / (1f - LIMIAR), 0f, 1f);
+        if (eixo < 0f) {
+            return -posicao;
+        }
+        return posicao;
+    }
 }
