@@ -28,6 +28,11 @@ public class Main extends Game {
     public Sound perdaSound;
     public Sound erroSound;
 
+    public Joystick joystick;
+    public Calibracao calibracao;
+
+    private Screen telaAntiga;
+
     @Override
     public void create() {
         batch = new SpriteBatch();
@@ -47,8 +52,21 @@ public class Main extends Game {
         acertoSound = Gdx.audio.newSound(Gdx.files.internal("acerto.mp3"));
         perdaSound = Gdx.audio.newSound(Gdx.files.internal("fruta_perdida.mp3"));
         erroSound = Gdx.audio.newSound(Gdx.files.internal("erro.mp3"));
+
+        joystick = new Joystick();
+        calibracao = new Calibracao();
     }
 
+    @Override
+    public void render() {
+        super.render();
+        // a tela antiga so e descartada depois de terminar o render dela
+        if (telaAntiga != null) {
+            telaAntiga.dispose();
+            telaAntiga = null;
+        }
+    }
+    
     @Override
     public void dispose() {
         batch.dispose();
