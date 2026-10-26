@@ -83,6 +83,7 @@ public class GameScreen extends ScreenAdapter {
         }
 
         updateFrutas(delta);
+        atualizarUI();
     }
 
     
@@ -103,7 +104,7 @@ public class GameScreen extends ScreenAdapter {
                 novaFruta();
 
             } else if (fruta.saiuDaTela()) {
-                
+
                 if (!(fruta instanceof Coco)) {
                     game.perdaSound.play();
                     vidas--;
