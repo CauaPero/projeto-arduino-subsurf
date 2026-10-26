@@ -159,6 +159,11 @@ public class GameScreen extends ScreenAdapter {
         viewport.update(width, height, true);
         uiStage.getViewport().update(width, height, true);
     }
+
+    @Override
+    public void dispose() {
+        uiStage.dispose();
+    }
 }
 
    
