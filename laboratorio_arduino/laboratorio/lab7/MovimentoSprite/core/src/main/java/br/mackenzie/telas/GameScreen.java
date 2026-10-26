@@ -3,19 +3,29 @@ package br.mackenzie.telas;
 import br.mackenzie.Main;
 import br.mackenzie.config.Nivel;
 import br.mackenzie.objetos.Cesta;
+import br.mackenzie.objetos.Fruta;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.Array;
+
 
 public class GameScreen extends ScreenAdapter {
+
+    private static final float TAMANHO_FRUTA = 0.7f;
 
     private Main game;
     private Nivel nivel;
     private FitViewport viewport;
     private Cesta cesta;
+
+    private Array<Fruta> frutas;
+
+    private float spawnTimer;
 
     public GameScreen(Main game, int numeroNivel) {
         this.game = game;
@@ -24,6 +34,10 @@ public class GameScreen extends ScreenAdapter {
         viewport = new FitViewport(Main.LARGURA_MUNDO, Main.ALTURA_MUNDO);
 
         cesta = new Cesta(game.cestaTexture, Main.LARGURA_MUNDO * nivel.fracaoCesta);
+        frutas = new Array<Fruta>();
+        spawnTimer = 0f;
+
+        novaFruta();
 
     }
 
