@@ -54,6 +54,12 @@ public class GameScreen extends ScreenAdapter {
         cesta.update(delta);
     }
 
+    private void draw() {
+        ScreenUtils.clear(Color.BLACK);
+        viewport.apply();
+        game.batch.setProjectionMatrix(viewport.getCamera().combined);
+
+    }
 }
 
    
