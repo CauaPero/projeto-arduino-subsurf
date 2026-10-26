@@ -47,6 +47,8 @@ public class GameScreen extends ScreenAdapter {
 
         cesta = new Cesta(game.cestaTexture, Main.LARGURA_MUNDO * nivel.fracaoCesta);
         frutas = new Array<Fruta>();
+
+        pontos = 0;
         spawnTimer = 0f;
 
         novaFruta();
@@ -89,11 +91,26 @@ public class GameScreen extends ScreenAdapter {
             Fruta fruta = frutas.get(i);
             fruta.update(delta);
 
-            if (fruta.saiuDaTela()) {
+            if (fruta.getBounds().overlaps(cesta.getAreaColeta())) {
+
+                pontos = Math.max(0, pontos + fruta.getPontos());
+                if (fruta instanceof Coco) {
+                    game.erroSound.play();
+                } else {
+                    game.acertoSound.play();
+                }
                 frutas.removeIndex(i);
                 novaFruta();
 
-            }
+            } else if (fruta.saiuDaTela()) {
+                
+                if (!(fruta instanceof Coco)) {
+                    game.perdaSound.play();
+                    vidas--;
+                }
+                frutas.removeIndex(i);
+                novaFruta();
+           }
         }
     }
 
