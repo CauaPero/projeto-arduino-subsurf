@@ -24,9 +24,19 @@ public class GameScreen extends ScreenAdapter {
         viewport = new FitViewport(Main.LARGURA_MUNDO, Main.ALTURA_MUNDO);
 
         cesta = new Cesta(game.cestaTexture, Main.LARGURA_MUNDO * nivel.fracaoCesta);
-        
+
     }
 
+    @Override
+    public void render(float delta) {
+        input();
+        logic();
+        draw();
+    }
+
+    private void input() {
+    
+    }
 
 }
 
