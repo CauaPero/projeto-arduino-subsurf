@@ -124,11 +124,14 @@ public class GameScreen extends ScreenAdapter {
 
         float x = MathUtils.random(0f, Main.LARGURA_MUNDO - TAMANHO_FRUTA);
         float y = Main.ALTURA_MUNDO;
-        float velocidadeX = 0f;
-        int tipo = MathUtils.random(0, game.frutaTextures.length - 1);
+        float velocidadeX = sortearVelocidadeLateral();
 
-        frutas.add(new Fruta(game.frutaTextures[tipo],x,y,TAMANHO_FRUTA,nivel.velocidadeQueda, velocidadeX));
-
+        if (MathUtils.random() < nivel.chanceCoco) {
+            frutas.add(new Coco(game.cocoTexture, x, y, TAMANHO_FRUTA, nivel.velocidadeQueda, velocidadeX));
+        } else {
+            int tipo = MathUtils.random(0, game.frutaTextures.length - 1);
+            frutas.add(new Fruta(game.frutaTextures[tipo], x, y, TAMANHO_FRUTA, nivel.velocidadeQueda, velocidadeX));
+        }
     }
 
     private void draw() {
