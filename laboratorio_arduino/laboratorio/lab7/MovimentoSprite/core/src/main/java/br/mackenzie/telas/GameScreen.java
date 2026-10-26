@@ -105,15 +105,16 @@ public class GameScreen extends ScreenAdapter {
                 novaFruta();
 
             } else if (fruta.saiuDaTela()) {
-
                 if (!(fruta instanceof Coco)) {
                     game.perdaSound.play();
                     vidas--;
                 }
                 frutas.removeIndex(i);
                 novaFruta();
-           }
+            }
         }
+                    
+
     }
 
     private void atualizarUI() {
