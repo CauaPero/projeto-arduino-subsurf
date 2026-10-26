@@ -38,6 +38,22 @@ public class GameScreen extends ScreenAdapter {
     
     }
 
+    private void logic() {
+        float delta = Math.min(
+            Gdx.graphics.getDeltaTime(), 0.05f
+        );
+
+        game.joystick.update(delta);
+
+        cesta.mover(
+            game.calibracao.getPosicao(
+                game.joystick.getEixo()
+            )
+        );
+
+        cesta.update(delta);
+    }
+
 }
 
    
