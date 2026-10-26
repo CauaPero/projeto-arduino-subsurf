@@ -4,6 +4,7 @@ import br.mackenzie.Main;
 import br.mackenzie.config.Nivel;
 import br.mackenzie.objetos.Cesta;
 import br.mackenzie.objetos.Fruta;
+import br.mackenzie.objetos.Coco;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
