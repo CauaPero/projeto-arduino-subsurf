@@ -94,7 +94,7 @@ public class GameScreen extends ScreenAdapter {
         int tipo = MathUtils.random(0, game.frutaTextures.length - 1);
 
         frutas.add(new Fruta(game.frutaTextures[tipo],x,y,TAMANHO_FRUTA,nivel.velocidadeQueda, velocidadeX));
-        
+
     }
 
     private void draw() {
@@ -104,13 +104,11 @@ public class GameScreen extends ScreenAdapter {
 
         game.batch.begin();
 
-        game.batch.draw(
-            game.backgroundTexture,
-            0f,
-            0f,
-            Main.LARGURA_MUNDO,
-            Main.ALTURA_MUNDO
-        );
+        game.batch.draw(game.backgroundTexture,0f,0f,Main.LARGURA_MUNDO,Main.ALTURA_MUNDO);
+
+        for (Fruta fruta : frutas) {
+        fruta.draw(game.batch);
+        }
 
         cesta.draw(game.batch);
 
