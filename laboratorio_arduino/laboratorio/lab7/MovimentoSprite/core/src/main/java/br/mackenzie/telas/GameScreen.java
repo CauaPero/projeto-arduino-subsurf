@@ -56,10 +56,19 @@ public class GameScreen extends ScreenAdapter {
         float delta = Math.min(Gdx.graphics.getDeltaTime(), 0.05f);
 
         game.joystick.update(delta);
-
         cesta.mover(game.calibracao.getPosicao(game.joystick.getEixo()));
 
         cesta.update(delta);
+
+        spawnTimer += delta;
+        if (spawnTimer >= nivel.intervaloSpawn) {
+            spawnTimer = 0f;
+            if (frutas.size < nivel.maxNaTela) {
+                novaFruta();
+            }
+        }
+
+        updateFrutas(delta);
     }
 
     private void draw() {
