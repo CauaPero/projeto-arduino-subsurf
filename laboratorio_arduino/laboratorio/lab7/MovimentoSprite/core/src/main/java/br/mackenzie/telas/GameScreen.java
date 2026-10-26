@@ -147,6 +147,11 @@ public class GameScreen extends ScreenAdapter {
 
         game.batch.end();
 
+        uiStage.getViewport().apply();
+        uiStage.act(Gdx.graphics.getDeltaTime());
+        uiStage.draw();
+
+
     }
 
     @Override
