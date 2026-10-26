@@ -71,6 +71,21 @@ public class GameScreen extends ScreenAdapter {
         updateFrutas(delta);
     }
 
+    
+    private void updateFrutas(float delta) {
+        for (int i = frutas.size - 1; i >= 0; i--) {
+            Fruta fruta = frutas.get(i);
+            fruta.update(delta);
+
+            if (fruta.saiuDaTela()) {
+                frutas.removeIndex(i);
+                novaFruta();
+                
+            }
+        }
+    }
+
+
     private void draw() {
         ScreenUtils.clear(Color.BLACK);
         viewport.apply();
