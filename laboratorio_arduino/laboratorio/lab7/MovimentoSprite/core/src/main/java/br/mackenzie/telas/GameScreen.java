@@ -157,6 +157,7 @@ public class GameScreen extends ScreenAdapter {
     @Override
     public void resize(int width, int height) {
         viewport.update(width, height, true);
+        uiStage.getViewport().update(width, height, true);
     }
 }
 
