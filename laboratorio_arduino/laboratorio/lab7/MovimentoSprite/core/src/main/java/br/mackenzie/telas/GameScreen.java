@@ -39,17 +39,11 @@ public class GameScreen extends ScreenAdapter {
     }
 
     private void logic() {
-        float delta = Math.min(
-            Gdx.graphics.getDeltaTime(), 0.05f
-        );
+        float delta = Math.min(Gdx.graphics.getDeltaTime(), 0.05f);
 
         game.joystick.update(delta);
 
-        cesta.mover(
-            game.calibracao.getPosicao(
-                game.joystick.getEixo()
-            )
-        );
+        cesta.mover(game.calibracao.getPosicao(game.joystick.getEixo()));
 
         cesta.update(delta);
     }
@@ -58,6 +52,20 @@ public class GameScreen extends ScreenAdapter {
         ScreenUtils.clear(Color.BLACK);
         viewport.apply();
         game.batch.setProjectionMatrix(viewport.getCamera().combined);
+
+        game.batch.begin();
+
+        game.batch.draw(
+            game.backgroundTexture,
+            0f,
+            0f,
+            Main.LARGURA_MUNDO,
+            Main.ALTURA_MUNDO
+        );
+
+        cesta.draw(game.batch);
+
+        game.batch.end();
 
     }
 }
