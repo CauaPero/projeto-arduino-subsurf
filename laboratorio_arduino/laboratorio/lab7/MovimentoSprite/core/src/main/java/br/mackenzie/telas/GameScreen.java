@@ -68,6 +68,11 @@ public class GameScreen extends ScreenAdapter {
         game.batch.end();
 
     }
+
+    @Override
+    public void resize(int width, int height) {
+        viewport.update(width, height, true);
+    }
 }
 
    
