@@ -17,6 +17,17 @@ public class GameScreen extends ScreenAdapter {
     private FitViewport viewport;
     private Cesta cesta;
 
+    public GameScreen(Main game, int numeroNivel) {
+        this.game = game;
+        nivel = Nivel.NIVEIS[numeroNivel - 1];
+
+        viewport = new FitViewport(Main.LARGURA_MUNDO, Main.ALTURA_MUNDO);
+
+        cesta = new Cesta(game.cestaTexture, Main.LARGURA_MUNDO * nivel.fracaoCesta);
+        
+    }
+
+
 }
 
    
