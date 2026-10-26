@@ -80,11 +80,22 @@ public class GameScreen extends ScreenAdapter {
             if (fruta.saiuDaTela()) {
                 frutas.removeIndex(i);
                 novaFruta();
-                
+
             }
         }
     }
 
+    
+    private void novaFruta() {
+
+        float x = MathUtils.random(0f, Main.LARGURA_MUNDO - TAMANHO_FRUTA);
+        float y = Main.ALTURA_MUNDO;
+        float velocidadeX = 0f;
+        int tipo = MathUtils.random(0, game.frutaTextures.length - 1);
+
+        frutas.add(new Fruta(game.frutaTextures[tipo],x,y,TAMANHO_FRUTA,nivel.velocidadeQueda, velocidadeX));
+        
+    }
 
     private void draw() {
         ScreenUtils.clear(Color.BLACK);
