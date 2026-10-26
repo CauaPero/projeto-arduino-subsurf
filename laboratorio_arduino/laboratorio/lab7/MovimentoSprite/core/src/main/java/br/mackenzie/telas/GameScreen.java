@@ -11,6 +11,9 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 
 
@@ -21,17 +24,26 @@ public class GameScreen extends ScreenAdapter {
     private Main game;
     private Nivel nivel;
     private FitViewport viewport;
+    private Stage uiStage;
+    private Label scoreLabel;
     private Cesta cesta;
 
     private Array<Fruta> frutas;
 
     private float spawnTimer;
 
+    private int pontos;
+
     public GameScreen(Main game, int numeroNivel) {
         this.game = game;
         nivel = Nivel.NIVEIS[numeroNivel - 1];
 
         viewport = new FitViewport(Main.LARGURA_MUNDO, Main.ALTURA_MUNDO);
+        uiStage = new Stage(new FitViewport(Main.LARGURA_UI, Main.ALTURA_UI), game.batch);
+
+        scoreLabel = game.criarLabel("", 1.6f, Color.WHITE, 20f, Main.ALTURA_UI - 45f, 300f, Align.left);
+
+        uiStage.addActor(scoreLabel);
 
         cesta = new Cesta(game.cestaTexture, Main.LARGURA_MUNDO * nivel.fracaoCesta);
         frutas = new Array<Fruta>();
