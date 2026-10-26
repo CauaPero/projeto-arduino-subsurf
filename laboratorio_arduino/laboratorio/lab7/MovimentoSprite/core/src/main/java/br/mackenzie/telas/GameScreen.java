@@ -115,6 +115,9 @@ public class GameScreen extends ScreenAdapter {
         }
     }
 
+    private void atualizarUI() {
+        scoreLabel.setText("Pontos: " + pontos + " / " + nivel.metaPontos);
+    }
     
     private void novaFruta() {
 
