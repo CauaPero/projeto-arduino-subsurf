@@ -35,16 +35,18 @@ public class MenuScreen extends ScreenAdapter {
     private void input() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
             game.iniciarJogo(1);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_1)) {
-            game.iniciarJogo(1);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_2)) {
-            game.iniciarJogo(2);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_3)) {
-            game.iniciarJogo(3);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_4)) {
-            game.iniciarJogo(4);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_5)) {
-            game.iniciarJogo(5);
+            return;
+        }
+        if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
+            Gdx.app.exit();
+        }
+
+        for (int i = 1; i <= 5; i++) {
+            if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_1 + i - 1)
+                || Gdx.input.isKeyJustPressed(Input.Keys.NUMPAD_1 + i - 1)) {
+                game.iniciarJogo(i);
+                return;
+            }
         }
     }
 
