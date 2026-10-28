@@ -32,7 +32,25 @@ public class MenuScreen implements Screen {
     public void render(float delta) {
         ScreenUtils.clear(0.12f, 0.18f, 0.12f, 1f);
 
+        input();
+
         stage.act(delta);
         stage.draw();
+    }
+
+    private void input() {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
+            game.iniciarJogo(1);
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_1)) {
+            game.iniciarJogo(1);
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_2)) {
+            game.iniciarJogo(2);
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_3)) {
+            game.iniciarJogo(3);
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_4)) {
+            game.iniciarJogo(4);
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_5)) {
+            game.iniciarJogo(5);
+        }
     }
 }
