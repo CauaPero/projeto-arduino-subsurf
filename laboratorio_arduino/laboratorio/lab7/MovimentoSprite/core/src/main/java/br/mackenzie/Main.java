@@ -1,15 +1,20 @@
 package br.mackenzie;
 
+import br.mackenzie.controle.Calibracao;
+import br.mackenzie.controle.Joystick;
+import br.mackenzie.telas.GameScreen;
+import br.mackenzie.telas.MenuScreen;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.utils.Align;
 
 public class Main extends Game {
 
@@ -58,6 +63,12 @@ public class Main extends Game {
 
         joystick = new Joystick();
         calibracao = new Calibracao();
+
+        irParaMenu();
+    }
+
+    public void irParaMenu() {
+        trocarTela(new MenuScreen(this));
     }
 
     public void iniciarJogo(int nivel) {
@@ -72,14 +83,12 @@ public class Main extends Game {
     @Override
     public void render() {
         super.render();
-        // a tela antiga so e descartada depois de terminar o render dela
         if (telaAntiga != null) {
             telaAntiga.dispose();
             telaAntiga = null;
         }
     }
 
-    // cria uma label posicionada para nao repetir codigo nas telas
     public Label criarLabel(String texto, float escala, Color cor, float x, float y, float largura, int alinhamento) {
         Label label = new Label(texto, new Label.LabelStyle(font, cor));
         label.setFontScale(escala);
@@ -92,9 +101,12 @@ public class Main extends Game {
     public Label criarLabelCentral(String texto, float escala, Color cor, float y) {
         return criarLabel(texto, escala, cor, 0f, y, LARGURA_UI, Align.center);
     }
-    
+
     @Override
     public void dispose() {
+        if (getScreen() != null) {
+            getScreen().dispose();
+        }
         batch.dispose();
         shapeRenderer.dispose();
         font.dispose();
