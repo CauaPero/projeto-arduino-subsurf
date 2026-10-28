@@ -34,8 +34,12 @@ public class GameScreen extends ScreenAdapter {
     private FitViewport viewport;
     private Stage uiStage;
     private Label scoreLabel;
-    private Cesta cesta;
+    private Label nivelLabel;
+    private Label timeLabel;
+    private Label tituloLabel;
+    private Label detalheLabel;
 
+    private Cesta cesta;
     private Array<Fruta> frutas;
 
     private int estado;
@@ -51,12 +55,23 @@ public class GameScreen extends ScreenAdapter {
         uiStage = new Stage(new FitViewport(Main.LARGURA_UI, Main.ALTURA_UI), game.batch);
 
         scoreLabel = game.criarLabel("", 1.6f, Color.WHITE, 20f, Main.ALTURA_UI - 45f, 300f, Align.left);
+        nivelLabel = game.criarLabelCentral("Nível " + numeroNivel, 1.6f, Color.YELLOW, Main.ALTURA_UI - 45f);
+        timeLabel = game.criarLabel("", 1.6f, Color.WHITE, Main.LARGURA_UI - 320f, Main.ALTURA_UI - 45f, 300f, Align.right);
+        tituloLabel = game.criarLabelCentral("", 3f, Color.WHITE, 280f);
+        detalheLabel = game.criarLabelCentral("", 1.5f, Color.LIGHT_GRAY, 210f);
+
         uiStage.addActor(scoreLabel);
+        uiStage.addActor(nivelLabel);
+        uiStage.addActor(timeLabel);
+        uiStage.addActor(tituloLabel);
+        uiStage.addActor(detalheLabel);
 
         cesta = new Cesta(game.cestaTexture, Main.LARGURA_MUNDO * nivel.fracaoCesta);
         frutas = new Array<Fruta>();
 
+        estado = JOGANDO;
         pontos = 0;
+        tempoRestante = TEMPO_LIMITE;
         spawnTimer = 0f;
 
         novaFruta();
