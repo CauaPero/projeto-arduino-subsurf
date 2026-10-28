@@ -1,4 +1,4 @@
-package br.mackenzie.objetos;
+package br.mackenzie.arduino;
 
 import com.fazecast.jSerialComm.SerialPort;
 import java.io.InputStream;

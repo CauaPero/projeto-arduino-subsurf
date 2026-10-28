@@ -7,6 +7,7 @@ import br.mackenzie.objetos.Fruta;
 import br.mackenzie.objetos.Coco;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -16,7 +17,6 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
-
 
 public class GameScreen extends ScreenAdapter {
 
@@ -32,7 +32,6 @@ public class GameScreen extends ScreenAdapter {
     private Array<Fruta> frutas;
 
     private float spawnTimer;
-
     private int pontos;
 
     public GameScreen(Main game, int numeroNivel) {
@@ -43,7 +42,6 @@ public class GameScreen extends ScreenAdapter {
         uiStage = new Stage(new FitViewport(Main.LARGURA_UI, Main.ALTURA_UI), game.batch);
 
         scoreLabel = game.criarLabel("", 1.6f, Color.WHITE, 20f, Main.ALTURA_UI - 45f, 300f, Align.left);
-
         uiStage.addActor(scoreLabel);
 
         cesta = new Cesta(game.cestaTexture, Main.LARGURA_MUNDO * nivel.fracaoCesta);
@@ -53,7 +51,6 @@ public class GameScreen extends ScreenAdapter {
         spawnTimer = 0f;
 
         novaFruta();
-
     }
 
     @Override
@@ -64,7 +61,10 @@ public class GameScreen extends ScreenAdapter {
     }
 
     private void input() {
-    
+        if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
+            game.irParaMenu();
+            return;
+        }
     }
 
     private void logic() {
@@ -72,7 +72,6 @@ public class GameScreen extends ScreenAdapter {
 
         game.joystick.update(delta);
         cesta.mover(game.calibracao.getPosicao(game.joystick.getEixo()));
-
         cesta.update(delta);
 
         spawnTimer += delta;
@@ -87,14 +86,12 @@ public class GameScreen extends ScreenAdapter {
         atualizarUI();
     }
 
-    
     private void updateFrutas(float delta) {
         for (int i = frutas.size - 1; i >= 0; i--) {
             Fruta fruta = frutas.get(i);
             fruta.update(delta);
 
             if (fruta.getBounds().overlaps(cesta.getAreaColeta())) {
-
                 pontos = Math.max(0, pontos + fruta.getPontos());
                 if (fruta instanceof Coco) {
                     game.erroSound.play();
@@ -103,18 +100,14 @@ public class GameScreen extends ScreenAdapter {
                 }
                 frutas.removeIndex(i);
                 novaFruta();
-
             } else if (fruta.saiuDaTela()) {
                 if (!(fruta instanceof Coco)) {
                     game.perdaSound.play();
-                    vidas--;
                 }
                 frutas.removeIndex(i);
                 novaFruta();
             }
         }
-                    
-
     }
 
     private void atualizarUI() {
@@ -122,10 +115,9 @@ public class GameScreen extends ScreenAdapter {
     }
     
     private void novaFruta() {
-
         float x = MathUtils.random(0f, Main.LARGURA_MUNDO - TAMANHO_FRUTA);
         float y = Main.ALTURA_MUNDO;
-        float velocidadeX = sortearVelocidadeLateral();
+        float velocidadeX = 0f;
 
         if (MathUtils.random() < nivel.chanceCoco) {
             frutas.add(new Coco(game.cocoTexture, x, y, TAMANHO_FRUTA, nivel.velocidadeQueda, velocidadeX));
@@ -141,22 +133,18 @@ public class GameScreen extends ScreenAdapter {
         game.batch.setProjectionMatrix(viewport.getCamera().combined);
 
         game.batch.begin();
-
-        game.batch.draw(game.backgroundTexture,0f,0f,Main.LARGURA_MUNDO,Main.ALTURA_MUNDO);
+        game.batch.draw(game.backgroundTexture, 0f, 0f, Main.LARGURA_MUNDO, Main.ALTURA_MUNDO);
 
         for (Fruta fruta : frutas) {
-        fruta.draw(game.batch);
+            fruta.draw(game.batch);
         }
 
         cesta.draw(game.batch);
-
         game.batch.end();
 
         uiStage.getViewport().apply();
         uiStage.act(Gdx.graphics.getDeltaTime());
         uiStage.draw();
-
-
     }
 
     @Override
@@ -170,5 +158,3 @@ public class GameScreen extends ScreenAdapter {
         uiStage.dispose();
     }
 }
-
-   

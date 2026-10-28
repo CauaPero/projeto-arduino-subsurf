@@ -1,4 +1,4 @@
-package br.mackenzie.objetos;
+package br.mackenzie.arduino;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
