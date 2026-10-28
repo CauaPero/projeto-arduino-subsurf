@@ -26,6 +26,7 @@ public class MenuScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
         input();
+        draw(delta);
     }
 
     private void input() {
@@ -42,6 +43,21 @@ public class MenuScreen extends ScreenAdapter {
         } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_5)) {
             game.iniciarJogo(5);
         }
+    }
+
+    private void draw(float delta) {
+        ScreenUtils.clear(Color.BLACK);
+
+        uiStage.getViewport().apply();
+        game.batch.setProjectionMatrix(uiStage.getCamera().combined);
+        game.batch.begin();
+        game.batch.setColor(0.45f, 0.45f, 0.45f, 1f);
+        game.batch.draw(game.backgroundTexture, 0f, 0f, Main.LARGURA_UI, Main.ALTURA_UI);
+        game.batch.setColor(Color.WHITE);
+        game.batch.end();
+
+        uiStage.act(delta);
+        uiStage.draw();
     }
 
     @Override
