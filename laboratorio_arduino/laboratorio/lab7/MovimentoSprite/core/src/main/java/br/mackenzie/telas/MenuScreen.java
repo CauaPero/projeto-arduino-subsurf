@@ -18,9 +18,12 @@ public class MenuScreen extends ScreenAdapter {
         this.game = game;
         uiStage = new Stage(new FitViewport(Main.LARGURA_UI, Main.ALTURA_UI), game.batch);
 
-        uiStage.addActor(game.criarLabelCentral("COLHEITA NA FLORESTA", 2.0f, Color.YELLOW, 380f));
-        uiStage.addActor(game.criarLabelCentral("Pressione 1 a 5 para escolher o nivel", 1.2f, Color.WHITE, 290f));
-        uiStage.addActor(game.criarLabelCentral("Pressione ENTER para jogar o Nivel 1", 1.2f, Color.GREEN, 240f));
+        uiStage.addActor(game.criarLabelCentral("Colheita na Floresta", 3.2f, Color.YELLOW, 400f));
+        uiStage.addActor(game.criarLabelCentral("Reabilitação motora", 1.6f, Color.WHITE, 360f));
+
+        uiStage.addActor(game.criarLabelCentral("ENTER  -  Jogar a partir do nível 1", 1.6f, Color.WHITE, 280f));
+        uiStage.addActor(game.criarLabelCentral("1 a 5  -  Escolher o nível", 1.6f, Color.WHITE, 240f));
+        uiStage.addActor(game.criarLabelCentral("ESC  -  Sair", 1.6f, Color.WHITE, 160f));
     }
 
     @Override
