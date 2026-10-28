@@ -22,6 +22,13 @@ public class GameScreen extends ScreenAdapter {
 
     private static final float TAMANHO_FRUTA = 0.7f;
 
+    private static final int JOGANDO = 0;
+    private static final int NIVEL_CONCLUIDO = 2;
+    private static final int TEMPO_ESGOTADO = 3;
+    private static final int JOGO_COMPLETO = 4;
+
+    private static final float TEMPO_LIMITE = 180f;
+
     private Main game;
     private Nivel nivel;
     private FitViewport viewport;
@@ -31,7 +38,9 @@ public class GameScreen extends ScreenAdapter {
 
     private Array<Fruta> frutas;
 
+    private int estado;
     private float spawnTimer;
+    private float tempoRestante;
     private int pontos;
 
     public GameScreen(Main game, int numeroNivel) {
