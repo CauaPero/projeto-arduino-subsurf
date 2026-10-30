@@ -95,6 +95,22 @@ com largura de um terço da tela, ocupa uma dessas posições por vez. O menu de
 permitir iniciar, pausar e reiniciar a atividade, com informações de fase, pontuação e 
 vidas visíveis durante o jogo.
 
+5.2 Objetos, regras e feedback
+
+Há quatro frutas (maçã, banana, laranja e morango) e um dejeto,
+totalizando 5 sprites. Sua rotação durante a queda é produzida pela transformação 
+gráfica nativa do libGDX, sem necessidade de quadros individuais para cada giro. A colisão 
+considera a sobreposição entre os limites da fruta e da cesta.
+
+Evento	Efeito proposto	Feedback
+Fruta boa capturada	+1 ponto	Som de acerto
+Dejeto capturado	−5 pontos	Som de erro grave
+Fruta boa não capturada	−1 vida (3 iniciais)	Som de erro leve
+
+O término de sessão ocorre quando as vidas chegam a zero, o avanço de fase depende de 
+alcançar a meta de pontos.
+
+
 
 
 
