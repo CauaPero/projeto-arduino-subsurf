@@ -88,6 +88,13 @@ base. As frutas aparecem na região superior e descem em direção ao chão. O c
 permanece estático. O personagem principal é representado pela cesta, cujas três posições
 indicam deslocamento à esquerda, ao centro e à direita.
 
+5.1 Controle, ações e interface
+
+O controle físico fornece três comandos: 0 (esquerda), 1 (centro) e 2 (direita). A cesta, 
+com largura de um terço da tela, ocupa uma dessas posições por vez. O menu deve 
+permitir iniciar, pausar e reiniciar a atividade, com informações de fase, pontuação e 
+vidas visíveis durante o jogo.
+
 
 
 
