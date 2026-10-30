@@ -36,3 +36,22 @@ manipular o controle com segurança, após orientação de profissional habilita
 realiza diagnóstico, não substitui fisioterapia ou terapia ocupacional e não deve impor 
 movimentos dolorosos ou fatigantes.
 
+Justificativa e relevância extensionista
+
+A proposta associa um dispositivo físico de baixo custo a um ambiente visual simples. O 
+usuário não controla a cesta por teclado durante a sessão, o deslocamento depende dos dados 
+transmitidos pelo Arduino. Assim, o exercício de movimentar a alavanca ganha consequência 
+imediata no jogo, criando um ciclo de ação, resposta visual, correção e nova tentativa.
+
+A gamificação é empregada por meio de metas, progressão gradual, pontuação, sons e feedback 
+de acerto ou erro. A distinção entre frutas boas e dejetos acrescenta um componente de 
+atenção e tomada de decisão, enquanto a alteração de velocidade e trajetória exige 
+adaptação do controle motor. O projeto também tem valor acadêmico e extensionista por 
+aproximar programação, eletrônica e uma necessidade social concreta, com potencial de 
+demonstrações educativas.
+A proposta, contudo, deve ser interpretada com cautela: pontuar mais no jogo não equivale, 
+isoladamente, a recuperação clínica. O potencial terapêutico será considerado hipótese de 
+aplicação e não resultado comprovado deste projeto. A escolha do movimento, sua amplitude e
+a duração das sessões precisam ser ajustadas às possibilidades de cada usuário.
+
+
