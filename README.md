@@ -64,4 +64,13 @@ Desenvolver um protótipo funcional de jogo 2D, integrado a um controle físico 
 Arduino, para estimular a prática de coordenação e tempo de reação dos 
 membros superiores em uma atividade lúdica pós-AVC.
 
+3.2 Objetivos específicos
+
+• Implementar menu com início, pausa e reinício, personagem e cinco fases progressivas.
+• Capturar os movimentos do potenciômetro e convertê-los em três posições por comunicação serial.
+• Criar sistema de seleção de frutas, colisões, pontuação, vidas e feedback audiovisual.
+• Registrar indicadores de velocidade de resposta e consistência, para comparação entre sessões.
+
+
+
 
