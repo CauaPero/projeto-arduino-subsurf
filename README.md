@@ -81,6 +81,14 @@ consistência. O Pomar Ativo prevê cinco fases e um controle físico exclusivo 
 entregue. O teclado será utilizado somente em ensaios internos de desenvolvimento, sendo 
 desabilitado no modo de uso com paciente.
 
+5. Descrição do jogo e mecânicas
+
+A cena principal representa uma floresta, com árvores na parte superior e uma cesta na 
+base. As frutas aparecem na região superior e descem em direção ao chão. O cenário 
+permanece estático. O personagem principal é representado pela cesta, cujas três posições
+indicam deslocamento à esquerda, ao centro e à direita.
+
+
 
 
 
