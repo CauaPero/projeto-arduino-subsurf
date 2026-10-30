@@ -16,7 +16,7 @@ problema, a fundamentação, as regras, a arquitetura e os indicadores.
 
 
 
-Introdução e contextualização do problema
+1. Introdução e contextualização do problema
 
 O AVC pode ocasionar alterações de força, coordenação, destreza e controle motor dos 
 membros superiores, dificultando atividades cotidianas que exigem alcance, precisão e 
@@ -36,7 +36,8 @@ manipular o controle com segurança, após orientação de profissional habilita
 realiza diagnóstico, não substitui fisioterapia ou terapia ocupacional e não deve impor 
 movimentos dolorosos ou fatigantes.
 
-Justificativa e relevância extensionista
+
+2. Justificativa e relevância extensionista
 
 A proposta associa um dispositivo físico de baixo custo a um ambiente visual simples. O 
 usuário não controla a cesta por teclado durante a sessão, o deslocamento depende dos dados 
@@ -53,5 +54,14 @@ A proposta, contudo, deve ser interpretada com cautela: pontuar mais no jogo nã
 isoladamente, a recuperação clínica. O potencial terapêutico será considerado hipótese de 
 aplicação e não resultado comprovado deste projeto. A escolha do movimento, sua amplitude e
 a duração das sessões precisam ser ajustadas às possibilidades de cada usuário.
+
+
+3. Objetivos
+
+3.1 Objetivo geral
+
+Desenvolver um protótipo funcional de jogo 2D, integrado a um controle físico com 
+Arduino, para estimular a prática de coordenação e tempo de reação dos 
+membros superiores em uma atividade lúdica pós-AVC.
 
 
