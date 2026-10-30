@@ -1,1 +1,5 @@
-# projeto-arduino-subsurf
+POMAR ATIVO: JOGO SÉRIO 2D COM ARDUINO PARA APOIO À REABILITAÇÃO MOTORA PÓS-AVC
+
+Resumo
+
+Este trabalho apresenta a proposta do Pomar Ativo, jogo bidimensional voltado ao apoio de exercícios de coordenação de membros superiores em pessoas com sequelas motoras leves e moderadas de acidente vascular cerebral (AVC). A experiência converte a movimentação de uma alavanca conectada a um Arduino em comandos para uma cesta virtual, que deve coletar frutas adequadas e evitar itens indesejados. O sistema é planejado em Java, com libGDX para renderização e lógica do jogo e jSerialComm para comunicação serial por USB. São previstas cinco fases de dificuldade crescente e o registro mensurável de indicadores de desempenho, como acertos, tempo de resposta e consistência de movimentos. A solução é concebida como recurso complementar, acessível e de caráter extensionista, sua eficácia clínica não é presumida e dependerá de avaliação específica. O documento descreve o problema, a fundamentação, as regras, a arquitetura e os indicadores.
