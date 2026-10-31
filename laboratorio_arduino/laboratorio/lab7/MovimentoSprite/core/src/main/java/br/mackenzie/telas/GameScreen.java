@@ -103,6 +103,9 @@ public class GameScreen extends ScreenAdapter {
     }
 
     private void logic() {
+        if (estado != JOGANDO) {
+            return;
+        }
         float delta = Math.min(Gdx.graphics.getDeltaTime(), 0.05f);
 
         game.joystick.update(delta);
@@ -118,6 +121,18 @@ public class GameScreen extends ScreenAdapter {
         }
 
         updateFrutas(delta);
+
+        tempoRestante -= delta;
+        if (pontos >= nivel.metaPontos) {
+            terminarNivel();
+        } else if (tempoRestante <= 0f) {
+            tempoRestante = 0f;
+            estado = TEMPO_ESGOTADO;
+            tituloLabel.setText("Tempo esgotado!");
+            detalheLabel.setText("Pontos: " + pontos + " de " + nivel.metaPontos
+                + "     ENTER: tentar de novo     ESC: menu");
+        }
+
         atualizarUI();
     }
 
