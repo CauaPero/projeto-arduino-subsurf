@@ -160,6 +160,18 @@ public class GameScreen extends ScreenAdapter {
         }
     }
 
+    private void terminarNivel() {
+    if (nivel.numero >= Nivel.NIVEIS.length) {
+        estado = JOGO_COMPLETO;
+        tituloLabel.setText("Parabéns! Você completou os 5 níveis!");
+        detalheLabel.setText("ENTER: voltar ao menu");
+    } else {
+        estado = NIVEL_CONCLUIDO;
+        tituloLabel.setText("Nível " + nivel.numero + " concluído!");
+        detalheLabel.setText("ENTER: próximo nível     ESC: menu");
+    }
+}
+
     private void atualizarUI() {
         scoreLabel.setText("Pontos: " + pontos + " / " + nivel.metaPontos);
     }
