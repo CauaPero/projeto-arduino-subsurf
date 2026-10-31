@@ -173,16 +173,14 @@ public class GameScreen extends ScreenAdapter {
 }
 
     private void atualizarUI() {
-        private void atualizarUI() {
-            scoreLabel.setText("Pontos: " + pontos + " / " + nivel.metaPontos);
+        scoreLabel.setText("Pontos: " + pontos + " / " + nivel.metaPontos);
 
-            int segundos = (int) Math.ceil(tempoRestante);
-            timeLabel.setText(String.format("Tempo: %02d:%02d", segundos / 60, segundos % 60));
+        int segundos = (int) Math.ceil(tempoRestante);
+        timeLabel.setText(String.format("Tempo: %02d:%02d", segundos / 60, segundos % 60));
 
-            boolean mostrarMensagem = estado != JOGANDO;
-            tituloLabel.setVisible(mostrarMensagem);
-            detalheLabel.setVisible(mostrarMensagem);
-        }
+        boolean mostrarMensagem = estado != JOGANDO;
+        tituloLabel.setVisible(mostrarMensagem);
+        detalheLabel.setVisible(mostrarMensagem);
     }
     
     private void novaFruta() {
@@ -216,6 +214,17 @@ public class GameScreen extends ScreenAdapter {
         uiStage.getViewport().apply();
         uiStage.act(Gdx.graphics.getDeltaTime());
         uiStage.draw();
+    }
+
+    private void escurecerTela() {
+        Gdx.gl.glEnable(GL20.GL_BLEND);
+        Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+
+        game.shapeRenderer.setProjectionMatrix(uiStage.getCamera().combined);
+        game.shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+        game.shapeRenderer.setColor(0f, 0f, 0f, 0.6f);
+        game.shapeRenderer.rect(0f, 0f, Main.LARGURA_UI, Main.ALTURA_UI);
+        game.shapeRenderer.end();
     }
 
     @Override
