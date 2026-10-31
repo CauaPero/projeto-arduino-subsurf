@@ -173,7 +173,16 @@ public class GameScreen extends ScreenAdapter {
 }
 
     private void atualizarUI() {
-        scoreLabel.setText("Pontos: " + pontos + " / " + nivel.metaPontos);
+        private void atualizarUI() {
+            scoreLabel.setText("Pontos: " + pontos + " / " + nivel.metaPontos);
+
+            int segundos = (int) Math.ceil(tempoRestante);
+            timeLabel.setText(String.format("Tempo: %02d:%02d", segundos / 60, segundos % 60));
+
+            boolean mostrarMensagem = estado != JOGANDO;
+            tituloLabel.setVisible(mostrarMensagem);
+            detalheLabel.setVisible(mostrarMensagem);
+        }
     }
     
     private void novaFruta() {
