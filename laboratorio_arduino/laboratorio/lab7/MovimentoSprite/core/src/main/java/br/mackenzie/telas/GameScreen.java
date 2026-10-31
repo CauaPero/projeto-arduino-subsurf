@@ -15,6 +15,8 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 
@@ -88,6 +90,15 @@ public class GameScreen extends ScreenAdapter {
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
             game.irParaMenu();
             return;
+        }
+        if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
+            if (estado == NIVEL_CONCLUIDO) {
+                game.iniciarJogo(nivel.numero + 1);
+            } else if (estado == TEMPO_ESGOTADO) {
+                game.iniciarJogo(nivel.numero);
+            } else if (estado == JOGO_COMPLETO) {
+                game.irParaMenu();
+            }
         }
     }
 
