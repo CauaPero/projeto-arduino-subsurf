@@ -212,6 +212,9 @@ public class GameScreen extends ScreenAdapter {
         game.batch.end();
 
         uiStage.getViewport().apply();
+        if (estado != JOGANDO) {
+            escurecerTela();
+        }
         uiStage.act(Gdx.graphics.getDeltaTime());
         uiStage.draw();
     }
