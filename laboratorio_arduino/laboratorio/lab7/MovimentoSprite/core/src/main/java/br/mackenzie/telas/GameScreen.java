@@ -101,7 +101,7 @@ public class GameScreen extends ScreenAdapter {
         if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
             if (estado == NIVEL_CONCLUIDO) {
                 game.iniciarJogo(nivel.numero + 1);
-            } else if (estado == TEMPO_ESGOTADO) {
+            } else if (estado == TEMPO_ESGOTADO || estado == SEM_VIDAS) {
                 game.iniciarJogo(nivel.numero);
             } else if (estado == JOGO_COMPLETO) {
                 game.irParaMenu();
@@ -186,13 +186,15 @@ public class GameScreen extends ScreenAdapter {
 
     private void atualizarUI() {
         scoreLabel.setText("Pontos: " + pontos + " / " + nivel.metaPontos);
+        vidasLabel.setText("Vidas: " + vidas);
 
         int segundos = (int) Math.ceil(tempoRestante);
         timeLabel.setText(String.format("Tempo: %02d:%02d", segundos / 60, segundos % 60));
 
         boolean mostrarMensagem = estado != JOGANDO;
         tituloLabel.setVisible(mostrarMensagem);
-        detalheLabel.setVisible(mostrarMensagem);
+        detalheLabel.setVisible(mostrarMensagem); 
+
     }
     
     private void novaFruta() {
@@ -208,6 +210,7 @@ public class GameScreen extends ScreenAdapter {
         }
     }
 
+    
     private void draw() {
         ScreenUtils.clear(Color.BLACK);
         viewport.apply();
