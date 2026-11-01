@@ -28,8 +28,10 @@ public class GameScreen extends ScreenAdapter {
     private static final int NIVEL_CONCLUIDO = 2;
     private static final int TEMPO_ESGOTADO = 3;
     private static final int JOGO_COMPLETO = 4;
+    private static final int SEM_VIDAS = 5;
 
     private static final float TEMPO_LIMITE = 180f;
+    private static final int VIDAS_INICIAIS = 5;
 
     private Main game;
     private Nivel nivel;
@@ -40,6 +42,7 @@ public class GameScreen extends ScreenAdapter {
     private Label timeLabel;
     private Label tituloLabel;
     private Label detalheLabel;
+    private Label vidasLabel;
 
     private Cesta cesta;
     private Array<Fruta> frutas;
@@ -48,6 +51,7 @@ public class GameScreen extends ScreenAdapter {
     private float spawnTimer;
     private float tempoRestante;
     private int pontos;
+    private int vidas;
 
     public GameScreen(Main game, int numeroNivel) {
         this.game = game;
