@@ -132,6 +132,11 @@ public class GameScreen extends ScreenAdapter {
         tempoRestante -= delta;
         if (pontos >= nivel.metaPontos) {
             terminarNivel();
+        } else if (vidas <= 0) {
+            estado = SEM_VIDAS;
+            tituloLabel.setText("Acabaram as vidas!");
+            detalheLabel.setText("Pontos: " + pontos + " de " + nivel.metaPontos
+                + "     ENTER: tentar de novo     ESC: menu");
         } else if (tempoRestante <= 0f) {
             tempoRestante = 0f;
             estado = TEMPO_ESGOTADO;
