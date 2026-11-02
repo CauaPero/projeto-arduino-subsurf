@@ -210,6 +210,16 @@ public class GameScreen extends ScreenAdapter {
         }
     }
 
+    private float sortearVelocidadeLateral() {
+        if (nivel.velocidadeLateral <= 0f || MathUtils.random() < nivel.chanceQuedaReta) {
+            return 0f;
+        }
+        float velocidade = MathUtils.random(nivel.velocidadeLateral * 0.4f, nivel.velocidadeLateral);
+        if (MathUtils.randomBoolean()) {
+            return velocidade;
+        }
+        return -velocidade;
+    }
     
     private void draw() {
         ScreenUtils.clear(Color.BLACK);
