@@ -200,8 +200,8 @@ public class GameScreen extends ScreenAdapter {
     private void novaFruta() {
         float x = MathUtils.random(0f, Main.LARGURA_MUNDO - TAMANHO_FRUTA);
         float y = Main.ALTURA_MUNDO;
-        float velocidadeX = 0f;
-
+        float velocidadeX = sortearVelocidadeLateral();
+        
         if (MathUtils.random() < nivel.chanceCoco) {
             frutas.add(new Coco(game.cocoTexture, x, y, TAMANHO_FRUTA, nivel.velocidadeQueda, velocidadeX));
         } else {
