@@ -128,6 +128,12 @@ Nas três primeiras fases, o jogador trabalha principalmente antecipação, sele
 quarta, a trajetória pode mudar após tocar as paredes, aumentando a necessidade de reavaliação. A quinta reúne maior volume de
 estímulos e mudanças de direção.
 
+6.1 Critérios de progressão
+
+A meta de pontos é o critério de transição especificado. Para comparação entre fases, o registro deve separar pontuação obtida e 
+oportunidades oferecidas, já que fases rápidas apresentam mais eventos por unidade de tempo. Sugere-se que a fase termine por 
+vitória ao alcançar a meta ou por derrota ao perder as três vidas, registrando-se o motivo de encerramento.
+
 
 
 
