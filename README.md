@@ -147,6 +147,10 @@ O Arduino lê o valor analógico da alavanca física e o classifica em três fai
 pela conexão USB. No computador, uma rotina Java, apoiada na biblioteca jSerialComm, recebe a mensagem e atualiza o comando que 
 será consumido pelo ciclo principal do libGDX.
 
+7.1 Fluxo de informação
+Movimento do usuário → leitura analógica → classificação 0/1/2 → envio serial USB → interpretação em Java → posição da cesta → 
+colisões e feedback → atualização das métricas
+
 
 
 
