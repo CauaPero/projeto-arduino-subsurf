@@ -63,4 +63,15 @@ e métricas explícitas de desempenho. O êxito técnico depende especialmente d
 consistente de dados. A avaliação de benefício clínico não faz parte dos resultados aqui apresentados e demanda investigação 
 independente.
 
+## Referências
+
+INTERCOLLEGIATE STROKE WORKING PARTY. National Clinical Guideline for Stroke. 2023. Disponível em: https://www.strokeguideline.org/
+chapter/rehabilitation-and-recovery/ . Acesso em: 19 out. 2026.
+DOUMAS, I. et al. Serious games for upper limb rehabilitation after stroke: a meta-analysis. Journal of NeuroEngineering and 
+Rehabilitation, 2021. Disponível em: https://pmc.ncbi.nlm.nih.gov/articles/PMC8204490/ . Acesso em: 19 out. 2026.
+DOCENTE DA DISCIPLINA. Projeto Final: Desenvolvimento de Jogo Sério para Reabilitação com IoT e libGDX. Documento de requisitos 
+disponibilizado à turma, s.d.
+EQUIPE DO PROJETO. Pomar Ativo: plano geral de conceito, jogabilidade, fases e arquitetura. Especificação fornecida para elaboração 
+do short paper, 2026.
+
 
