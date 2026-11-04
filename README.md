@@ -134,6 +134,14 @@ A meta de pontos é o critério de transição especificado. Para comparação e
 oportunidades oferecidas, já que fases rápidas apresentam mais eventos por unidade de tempo. Sugere-se que a fase termine por 
 vitória ao alcançar a meta ou por derrota ao perder as três vidas, registrando-se o motivo de encerramento.
 
+6.2 Acessibilidade e segurança de uso
+
+A interface prioriza frutas contrastantes, alvos grandes, instruções objetivas e efeitos sonoros distinguíveis, além de uma tela 
+de pausa acessível, a possibilidade de interromper imediatamente a sessão e a calibração do controle. Para utilização com 
+participantes reais, cabem avaliação profissional prévia, consentimento e observância dos 
+procedimentos éticos e de proteção dos dados de desempenho.
+
+
 
 
 
