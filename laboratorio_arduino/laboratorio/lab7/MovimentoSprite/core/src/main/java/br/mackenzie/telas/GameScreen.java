@@ -25,6 +25,7 @@ public class GameScreen extends ScreenAdapter {
     private static final float TAMANHO_FRUTA = 0.7f;
 
     private static final int JOGANDO = 0;
+    private static final int PAUSADO = 1;
     private static final int NIVEL_CONCLUIDO = 2;
     private static final int TEMPO_ESGOTADO = 3;
     private static final int JOGO_COMPLETO = 4;
@@ -52,6 +53,7 @@ public class GameScreen extends ScreenAdapter {
     private float tempoRestante;
     private int pontos;
     private int vidas;
+    private float tempoPausado;
 
     public GameScreen(Main game, int numeroNivel) {
         this.game = game;
@@ -98,7 +100,25 @@ public class GameScreen extends ScreenAdapter {
             game.irParaMenu();
             return;
         }
-        if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
+
+        if (estado == JOGANDO) {
+            if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
+                estado = PAUSADO;
+                tempoPausado = 0f;
+                tituloLabel.setText("Pausado");
+                detalheLabel.setText("ESPAÇO: continuar     ESPAÇO 2x seguidas: voltar ao menu");
+                atualizarUI();
+            }
+        } else if (estado == PAUSADO) {
+            tempoPausado += delta;
+            if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
+                if (tempoPausado < 0.5f) {
+                    game.irParaMenu();
+                } else {
+                    estado = JOGANDO;
+                    atualizarUI();
+                }
+            } else if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
             if (estado == NIVEL_CONCLUIDO) {
                 game.iniciarJogo(nivel.numero + 1);
             } else if (estado == TEMPO_ESGOTADO || estado == SEM_VIDAS) {
