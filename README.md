@@ -141,6 +141,11 @@ de pausa acessível, a possibilidade de interromper imediatamente a sessão e a 
 participantes reais, cabem avaliação profissional prévia, consentimento e observância dos 
 procedimentos éticos e de proteção dos dados de desempenho.
 
+7. Arquitetura e integração com o dispositivo
+
+O Arduino lê o valor analógico da alavanca física e o classifica em três faixas. O firmware transmite apenas o estado 0, 1 ou 2 
+pela conexão USB. No computador, uma rotina Java, apoiada na biblioteca jSerialComm, recebe a mensagem e atualiza o comando que 
+será consumido pelo ciclo principal do libGDX.
 
 
 
