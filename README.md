@@ -110,6 +110,24 @@ Fruta boa não capturada	−1 vida (3 iniciais)	Som de erro leve
 O término de sessão ocorre quando as vidas chegam a zero, o avanço de fase depende de 
 alcançar a meta de pontos.
 
+6. Progressão de dificuldade e balanceamento
+
+O projeto é dividido em cinco fases com incremento gradativo das demandas motoras e cognitivas. As metas são pontuações a serem 
+obtidas em cada etapa. Percentuais específicos de frutas podres, velocidades em pixels por segundo e frequência de geração serão
+definidos no balanceamento, pois não constam da especificação original.
+
+Fase	Condições de jogo	Meta
+
+1 — Aquecimento	Apenas frutas boas;  queda vertical lenta	20 pontos
+2 — Introdução cognitiva	Predomínio de boas; poucas podres; vertical um pouco mais rápida	30 pontos
+3 — Aceleração	Mais podres; velocidade média; queda vertical	40 pontos
+4 — Desafio direcional	Mistura equilibrada; velocidade média/rápida; rebotes e diagonais	50 pontos
+5 — Alta destreza	Maior frequência; alta velocidade; ângulos variáveis e rebotes	60 pontos
+
+Nas três primeiras fases, o jogador trabalha principalmente antecipação, seleção da posição e repetição do comando físico. Na 
+quarta, a trajetória pode mudar após tocar as paredes, aumentando a necessidade de reavaliação. A quinta reúne maior volume de
+estímulos e mudanças de direção.
+
 
 
 
