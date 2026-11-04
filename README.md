@@ -55,7 +55,12 @@ O Arduino lê o valor analógico da alavanca física e o classifica em três fai
 ### 7.1 Fluxo de informação
 Movimento do usuário → leitura analógica → classificação 0/1/2 → envio serial USB → interpretação em Java → posição da cesta → colisões e feedback → atualização das métricas
 
+## 8. Considerações finais
 
-
+O Pomar Ativo reúne uma mecânica compreensível, progressão em cinco fases e controle físico exclusivo, relacionando a atividade 
+motora à tomada de decisão e ao feedback em tempo real. Seu diferencial no contexto do projeto é integrar hardware acessível, jogo 2D 
+e métricas explícitas de desempenho. O êxito técnico depende especialmente da estabilidade serial, do balanceamento e do registro 
+consistente de dados. A avaliação de benefício clínico não faz parte dos resultados aqui apresentados e demanda investigação 
+independente.
 
 
