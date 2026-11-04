@@ -1,156 +1,59 @@
-POMAR ATIVO: JOGO SÉRIO 2D COM ARDUINO PARA APOIO À REABILITAÇÃO MOTORA PÓS-AVC
-
-Resumo
-
-Este trabalho apresenta a proposta do Pomar Ativo, jogo bidimensional voltado ao apoio de 
-exercícios de coordenação de membros superiores em pessoas com sequelas motoras leves e 
-moderadas de acidente vascular cerebral (AVC). A experiência converte a movimentação de uma 
-alavanca conectada a um Arduino em comandos para uma cesta virtual, que deve coletar frutas
-adequadas e evitar itens indesejados. O sistema é planejado em Java, com libGDX para 
-renderização e lógica do jogo e jSerialComm para comunicação serial por USB. São previstas
-cinco fases de dificuldade crescente e o registro mensurável de indicadores de 
-desempenho, como acertos, tempo de resposta e consistência de movimentos. A solução é
-concebida como recurso complementar, acessível e de caráter extensionista, sua eficácia 
-clínica não é presumida e dependerá de avaliação específica. O documento descreve o 
-problema, a fundamentação, as regras, a arquitetura e os indicadores.
-
-
-
-1. Introdução e contextualização do problema
-
-O AVC pode ocasionar alterações de força, coordenação, destreza e controle motor dos 
-membros superiores, dificultando atividades cotidianas que exigem alcance, precisão e 
-ajuste de movimento. A recuperação funcional frequentemente envolve repetição de tarefas, 
-acompanhamento profissional e adaptação da intensidade ao perfil individual. Diretrizes 
-para reabilitação pós-AVC recomendam prática repetitiva orientada a tarefas para pessoas 
-com movimento residual nos membros superiores (INTERCOLLEGIATE STROKE WORKING PARTY, 2023).
-A repetição, embora necessária, pode tornar-se pouco atrativa quando não oferece metas 
-claras ou retorno imediato. Nesse contexto, jogos combinam tarefas estruturadas e elementos 
-lúdicos, favorecendo oportunidades de participação e feedback. Análises com foco de
-reabilitação de membros superiores identificou resultados favoráveis ao uso de jogos 
-sérios, mas tais achados não comprovam automaticamente o benefício de qualquer jogo 
-específico (DOUMAS et al., 2021).
-O Pomar Ativo procura transformar movimentos voluntários simples em decisões observáveis na 
-tela. O público-alvo proposto são adultos com sequelas leves de AVC e capacidade de 
-manipular o controle com segurança, após orientação de profissional habilitado. O jogo não 
-realiza diagnóstico, não substitui fisioterapia ou terapia ocupacional e não deve impor 
-movimentos dolorosos ou fatigantes.
-
-
-2. Justificativa e relevância extensionista
-
-A proposta associa um dispositivo físico de baixo custo a um ambiente visual simples. O 
-usuário não controla a cesta por teclado durante a sessão, o deslocamento depende dos dados 
-transmitidos pelo Arduino. Assim, o exercício de movimentar a alavanca ganha consequência 
-imediata no jogo, criando um ciclo de ação, resposta visual, correção e nova tentativa.
-
-A gamificação é empregada por meio de metas, progressão gradual, pontuação, sons e feedback 
-de acerto ou erro. A distinção entre frutas boas e dejetos acrescenta um componente de 
-atenção e tomada de decisão, enquanto a alteração de velocidade e trajetória exige 
-adaptação do controle motor. O projeto também tem valor acadêmico e extensionista por 
-aproximar programação, eletrônica e uma necessidade social concreta, com potencial de 
-demonstrações educativas.
-A proposta, contudo, deve ser interpretada com cautela: pontuar mais no jogo não equivale, 
-isoladamente, a recuperação clínica. O potencial terapêutico será considerado hipótese de 
-aplicação e não resultado comprovado deste projeto. A escolha do movimento, sua amplitude e
-a duração das sessões precisam ser ajustadas às possibilidades de cada usuário.
-
-
-3. Objetivos
-
-3.1 Objetivo geral
-
-Desenvolver um protótipo funcional de jogo 2D, integrado a um controle físico com 
-Arduino, para estimular a prática de coordenação e tempo de reação dos 
-membros superiores em uma atividade lúdica pós-AVC.
-
-3.2 Objetivos específicos
-
+# POMAR ATIVO: JOGO 2D COM ARDUINO PARA APOIO À REABILITAÇÃO MOTORA PÓS-AVC
+## Resumo
+Este trabalho apresenta a proposta do Pomar Ativo, jogo bidimensional voltado ao apoio de exercícios de coordenação de membros superiores em pessoas com sequelas motoras leves e moderadas de acidente vascular cerebral (AVC). A experiência converte a movimentação de uma alavanca conectada a um Arduino em comandos para uma cesta virtual, que deve coletar frutas adequadas e evitar itens indesejados.
+O sistema é planejado em Java, com libGDX para renderização e lógica do jogo e jSerialComm para comunicação serial por USB. São previstas cinco fases de dificuldade crescentee o registro mensurável de indicadores de desempenho, como acertos, tempo de resposta e consistência de movimentos. A solução é concebida como recurso complementar, acessível e de caráter extensionista, sua eficácia clínica não é presumida e dependerá de avaliação específica. O documento descreve o problema, a fundamentação, as regras, a arquitetura e os indicadores.
+## 1. Introdução e contextualização do problema
+O AVC pode ocasionar alterações de força, coordenação, destreza e controle motor dos membros superiores, dificultando atividades cotidianas que exigem alcance, precisão e ajuste de movimento. A recuperação funcional frequentemente envolve repetição de tarefas, acompanhamento profissional e adaptação da intensidade ao perfil individual.
+Diretrizes para reabilitação pós-AVC recomendam prática repetitiva orientada a tarefas para pessoas com movimento residual nos membros superiores (INTERCOLLEGIATE STROKE WORKING PARTY, 2023). A repetição, embora necessária, pode tornar-se pouco atrativa quando não oferece metas claras ou retorno imediato. Nesse contexto, jogos combinam tarefas estruturadas e elementos lúdicos, favorecendo oportunidades de participação e feedback.
+Análises com foco de reabilitação de membros superiores identificaram resultados favoráveis ao uso de jogos sérios, mas tais achados não comprovam automaticamente o benefício de qualquer jogo específico (DOUMAS et al., 2021).
+O Pomar Ativo procura transformar movimentos voluntários simples em decisões observáveis na tela. O público-alvo proposto são adultos com sequelas leves de AVC e capacidade de manipular o controle com segurança, após orientação de profissional habilitado. O jogo não realiza diagnóstico, não substitui fisioterapia ou terapia ocupacional e não deve impor movimentos dolorosos ou fatigantes.
+## 2. Justificativa e relevância extensionista
+A proposta associa um dispositivo físico de baixo custo a um ambiente visual simples. O usuário não controla a cesta por teclado durante a sessão, o deslocamento depende dos dados transmitidos pelo Arduino. Assim, o exercício de movimentar a alavanca ganha consequência imediata no jogo, criando um ciclo de ação, resposta visual, correção e nova tentativa.
+A gamificação é empregada por meio de metas, progressão gradual, pontuação, sons e feedback de acerto ou erro. A distinção entre frutas boas e dejetos acrescenta um componente de atenção e tomada de decisão, enquanto a alteração de velocidade e trajetória exige adaptação do controle motor. O projeto também tem valor acadêmico e extensionista por aproximar programação, eletrônica e uma necessidade social concreta, com potencial de demonstrações educativas.
+A proposta, contudo, deve ser interpretada com cautela: pontuar mais no jogo não equivale, isoladamente, a recuperação clínica. O potencial terapêutico será considerado hipótese de aplicação e não resultado comprovado deste projeto. A escolha do movimento, sua amplitude e a duração das sessões precisam ser ajustadas às possibilidades de cada usuário.
+## 3. Objetivos
+### 3.1 Objetivo geral
+Desenvolver um protótipo funcional de jogo 2D, integrado a um controle físico com Arduino, para estimular a prática de coordenação e tempo de reação dos membros superiores em uma atividade lúdica pós-AVC.
+### 3.2 Objetivos específicos
 • Implementar menu com início, pausa e reinício, personagem e cinco fases progressivas.
-• Capturar os movimentos do potenciômetro e convertê-los em três posições por comunicação 
-serial.
+• Capturar os movimentos do potenciômetro e convertê-los em três posições por comunicação serial.
 • Criar sistema de seleção de frutas, colisões, pontuação, vidas e feedback audiovisual.
-• Registrar indicadores de velocidade de resposta e consistência, para comparação entre
-sessões.
-
-4. Delimitação e requisitos do projeto
-
-O projeto usa libGDX, comando exclusivamente derivado de dispositivo IoT,
-ao menos três fases progressivas, personagem, menu funcional e métricas de velocidade e 
-consistência. O Pomar Ativo prevê cinco fases e um controle físico exclusivo na versão 
-entregue. O teclado será utilizado somente em ensaios internos de desenvolvimento, sendo 
-desabilitado no modo de uso com paciente.
-
-5. Descrição do jogo e mecânicas
-
-A cena principal representa uma floresta, com árvores na parte superior e uma cesta na 
-base. As frutas aparecem na região superior e descem em direção ao chão. O cenário 
-permanece estático. O personagem principal é representado pela cesta, cujas três posições
-indicam deslocamento à esquerda, ao centro e à direita.
-
-5.1 Controle, ações e interface
-
-O controle físico fornece três comandos: 0 (esquerda), 1 (centro) e 2 (direita). A cesta, 
-com largura de um terço da tela, ocupa uma dessas posições por vez. O menu deve 
-permitir iniciar, pausar e reiniciar a atividade, com informações de fase, pontuação e 
-vidas visíveis durante o jogo.
-
-5.2 Objetos, regras e feedback
-
-Há quatro frutas (maçã, banana, laranja e morango) e um dejeto,
-totalizando 5 sprites. Sua rotação durante a queda é produzida pela transformação 
-gráfica nativa do libGDX, sem necessidade de quadros individuais para cada giro. A colisão 
-considera a sobreposição entre os limites da fruta e da cesta.
+• Registrar indicadores de velocidade de resposta e consistência, para comparação entre sessões.
+## 4. Delimitação e requisitos do projeto
+O projeto usa libGDX, comando exclusivamente derivado de dispositivo IoT, ao menos três fases progressivas, personagem, menu funcional e métricas de velocidade e consistência. O Pomar Ativo prevê cinco fases e um controle físico exclusivo na versão entregue. O teclado será utilizado somente em ensaios internos de desenvolvimento, sendo desabilitado no modo de uso com paciente.
+## 5. Description do jogo e mecânicas
+A cena principal representa uma floresta, com árvores na parte superior e uma cesta na base. As frutas aparecem na região superior e descem em direção ao chão. O cenário permanece estático. O personagem principal é representado pela cesta, cujas três posições indicam deslocamento à esquerda, ao centro e à direita.
+### 5.1 Controle, ações e interface
+O controle físico fornece três comandos: 0 (esquerda), 1 (centro) e 2 (direita). A cesta, com largura de um terço da tela, ocupa uma dessas posições por vez. O menu deve permitir iniciar, pausar e reiniciar a atividade, com informações de fase, pontuação e vidas visíveis durante o jogo.
+### 5.2 Objetos, regras e feedback
+Há quatro frutas (maçã, banana, laranja e morango) e um dejeto, totalizando 5 sprites. Sua rotação durante a queda é produzida pela transformação gráfica nativa do libGDX, sem necessidade de quadros individuais para cada giro. A colisão considera a sobreposição entre os limites da fruta e da cesta.
 
 Evento	Efeito proposto	Feedback
 Fruta boa capturada	+1 ponto	Som de acerto
 Dejeto capturado	−5 pontos	Som de erro grave
 Fruta boa não capturada	−1 vida (3 iniciais)	Som de erro leve
 
-O término de sessão ocorre quando as vidas chegam a zero, o avanço de fase depende de 
-alcançar a meta de pontos.
-
-6. Progressão de dificuldade e balanceamento
-
-O projeto é dividido em cinco fases com incremento gradativo das demandas motoras e cognitivas. As metas são pontuações a serem 
-obtidas em cada etapa. Percentuais específicos de frutas podres, velocidades em pixels por segundo e frequência de geração serão
-definidos no balanceamento, pois não constam da especificação original.
+O término de sessão ocorre quando as vidas chegam a zero; o avanço de fase depende de alcançar a meta de pontos.
+## 6. Progressão de dificuldade e balanceamento
+O projeto é dividido em cinco fases com incremento gradativo das demandas motoras e cognitivas. As metas são pontuações a serem obtidas em cada etapa. Percentuais específicos de frutas podres, velocidades em pixels por segundo e frequência de geração serão definidos no balanceamento, pois não constam da especificação original.
 
 Fase	Condições de jogo	Meta
-
-1 — Aquecimento	Apenas frutas boas;  queda vertical lenta	20 pontos
+1 — Aquecimento	Apenas frutas boas; queda vertical lenta	20 pontos
 2 — Introdução cognitiva	Predomínio de boas; poucas podres; vertical um pouco mais rápida	30 pontos
 3 — Aceleração	Mais podres; velocidade média; queda vertical	40 pontos
 4 — Desafio direcional	Mistura equilibrada; velocidade média/rápida; rebotes e diagonais	50 pontos
 5 — Alta destreza	Maior frequência; alta velocidade; ângulos variáveis e rebotes	60 pontos
 
-Nas três primeiras fases, o jogador trabalha principalmente antecipação, seleção da posição e repetição do comando físico. Na 
-quarta, a trajetória pode mudar após tocar as paredes, aumentando a necessidade de reavaliação. A quinta reúne maior volume de
-estímulos e mudanças de direção.
+Nas três primeiras fases, o jogador trabalha principalmente antecipação, seleção da posição e repetição do comando físico. Na quarta, a trajetória pode mudar após tocar as paredes, aumentando a necessidade de reavaliação. A quinta reúne maior volume de estímulos e mudanças de direção.
+### 6.1 Critérios de progressão
+A meta de pontos é o critério de transição especificado. Para comparação entre fases, o registro deve separar pontuação obtida e oportunidades oferecidas, já que fases rápidas apresentam mais eventos por unidade de tempo. Sugere-se que a fase termine por vitória ao alcançar a meta ou por derrota ao perder as três vidas, registrando-se o motivo de encerramento.
+### 6.2 Acessibilidade e segurança de uso
+A interface prioriza frutas contrastantes, alvos grandes, instruções objetivas e efeitos sonoros distinguíveis, além de uma tela de pausa acessível, a possibilidade de interromper imediatamente a sessão e a calibração do controle. Para utilização com participantes reais, cabem avaliação profissional prévia, consentimento e observância dos procedimentos éticos e de proteção dos dados de desempenho.
 
-6.1 Critérios de progressão
-
-A meta de pontos é o critério de transição especificado. Para comparação entre fases, o registro deve separar pontuação obtida e 
-oportunidades oferecidas, já que fases rápidas apresentam mais eventos por unidade de tempo. Sugere-se que a fase termine por 
-vitória ao alcançar a meta ou por derrota ao perder as três vidas, registrando-se o motivo de encerramento.
-
-6.2 Acessibilidade e segurança de uso
-
-A interface prioriza frutas contrastantes, alvos grandes, instruções objetivas e efeitos sonoros distinguíveis, além de uma tela 
-de pausa acessível, a possibilidade de interromper imediatamente a sessão e a calibração do controle. Para utilização com 
-participantes reais, cabem avaliação profissional prévia, consentimento e observância dos 
-procedimentos éticos e de proteção dos dados de desempenho.
-
-7. Arquitetura e integração com o dispositivo
-
-O Arduino lê o valor analógico da alavanca física e o classifica em três faixas. O firmware transmite apenas o estado 0, 1 ou 2 
-pela conexão USB. No computador, uma rotina Java, apoiada na biblioteca jSerialComm, recebe a mensagem e atualiza o comando que 
-será consumido pelo ciclo principal do libGDX.
-
-7.1 Fluxo de informação
-Movimento do usuário → leitura analógica → classificação 0/1/2 → envio serial USB → interpretação em Java → posição da cesta → 
-colisões e feedback → atualização das métricas
-
+## 7. Arquitetura e integração com o dispositivo
+O Arduino lê o valor analógico da alavanca física e o classifica em três faixas. O firmware transmite apenas o estado 0, 1 ou 2 pela conexão USB. No computador, uma rotina Java, apoiada na biblioteca jSerialComm, recebe a mensagem e atualiza o comando que será consumido pelo ciclo principal do libGDX.
+### 7.1 Fluxo de informação
+Movimento do usuário → leitura analógica → classificação 0/1/2 → envio serial USB → interpretação em Java → posição da cesta → colisões e feedback → atualização das métricas
 
 
 
