@@ -2,6 +2,7 @@ package br.mackenzie;
 
 import br.mackenzie.controle.Calibracao;
 import br.mackenzie.controle.Joystick;
+import br.mackenzie.telas.CalibracaoScreen;
 import br.mackenzie.telas.GameScreen;
 import br.mackenzie.telas.MenuScreen;
 import com.badlogic.gdx.Game;
