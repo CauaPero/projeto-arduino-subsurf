@@ -64,9 +64,14 @@ public class Main extends Game {
         joystick = new Joystick();
         calibracao = new Calibracao();
 
-        irParaMenu();
+        irParaCalibracao();
     }
 
+
+    public void irParaCalibracao() {
+        trocarTela(new CalibracaoScreen(this));
+    }
+    
     public void irParaMenu() {
         trocarTela(new MenuScreen(this));
     }

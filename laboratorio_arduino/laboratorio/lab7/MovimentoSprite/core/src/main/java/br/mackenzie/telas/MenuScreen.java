@@ -18,12 +18,20 @@ public class MenuScreen extends ScreenAdapter {
         this.game = game;
         uiStage = new Stage(new FitViewport(Main.LARGURA_UI, Main.ALTURA_UI), game.batch);
 
+        int esquerda = Math.round(game.calibracao.getLimiteEsquerdo() * 100f);
+        int direita = Math.round(game.calibracao.getLimiteDireito() * 100f);
+
         uiStage.addActor(game.criarLabelCentral("Colheita na Floresta", 3.2f, Color.YELLOW, 400f));
         uiStage.addActor(game.criarLabelCentral("Reabilitação motora", 1.6f, Color.WHITE, 360f));
 
         uiStage.addActor(game.criarLabelCentral("ENTER  -  Jogar a partir do nível 1", 1.6f, Color.WHITE, 280f));
         uiStage.addActor(game.criarLabelCentral("1 a 5  -  Escolher o nível", 1.6f, Color.WHITE, 240f));
+        uiStage.addActor(game.criarLabelCentral("C  -  Refazer a calibração", 1.6f, Color.WHITE, 200f));
         uiStage.addActor(game.criarLabelCentral("ESC  -  Sair", 1.6f, Color.WHITE, 160f));
+    
+        uiStage.addActor(game.criarLabelCentral(
+            "Amplitude calibrada:  esquerda " + esquerda + "%   |   direita " + direita + "%",
+            1.3f, Color.LIGHT_GRAY, 70f));
     }
 
     @Override
@@ -35,6 +43,10 @@ public class MenuScreen extends ScreenAdapter {
     private void input() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
             game.iniciarJogo(1);
+            return;
+        }
+        if (Gdx.input.isKeyJustPressed(Input.Keys.C)) {
+            game.irParaCalibracao();
             return;
         }
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
