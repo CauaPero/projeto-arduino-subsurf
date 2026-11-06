@@ -128,6 +128,7 @@ public class GameScreen extends ScreenAdapter {
             }
         }
     }
+    }
 
     private void logic() {
         if (estado != JOGANDO) {
