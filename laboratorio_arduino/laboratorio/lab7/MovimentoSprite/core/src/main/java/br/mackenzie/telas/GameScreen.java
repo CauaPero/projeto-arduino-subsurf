@@ -96,6 +96,8 @@ public class GameScreen extends ScreenAdapter {
     }
 
     private void input() {
+        float delta = Gdx.graphics.getDeltaTime();
+
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
             game.irParaMenu();
             return;
@@ -118,7 +120,8 @@ public class GameScreen extends ScreenAdapter {
                     estado = JOGANDO;
                     atualizarUI();
                 }
-            } else if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
+            }
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
             if (estado == NIVEL_CONCLUIDO) {
                 game.iniciarJogo(nivel.numero + 1);
             } else if (estado == TEMPO_ESGOTADO || estado == SEM_VIDAS) {
@@ -127,7 +130,6 @@ public class GameScreen extends ScreenAdapter {
                 game.irParaMenu();
             }
         }
-    }
     }
 
     private void logic() {
