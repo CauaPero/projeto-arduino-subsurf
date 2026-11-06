@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run desktop game (Gradle)",
+      "type": "process",
+      "command": "${workspaceFolder}/gradlew",
+      "args": [
+        "lwjgl3:run"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
