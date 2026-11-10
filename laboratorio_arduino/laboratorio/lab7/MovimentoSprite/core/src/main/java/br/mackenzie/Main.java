@@ -23,6 +23,7 @@ public class Main extends Game {
     public static final float ALTURA_MUNDO = 5f;
     public static final float LARGURA_UI = 800f;
     public static final float ALTURA_UI = 500f;
+    public static final String PORTA_ARDUINO = "COM3";
 
     public SpriteBatch batch;
     public ShapeRenderer shapeRenderer;
@@ -62,7 +63,7 @@ public class Main extends Game {
         perdaSound = Gdx.audio.newSound(Gdx.files.internal("fruta_perdida.mp3"));
         erroSound = Gdx.audio.newSound(Gdx.files.internal("erro.mp3"));
 
-        joystick = new Joystick();
+        joystick = new Joystick(PORTA_ARDUINO);        
         calibracao = new Calibracao();
 
         irParaCalibracao();
@@ -113,6 +114,7 @@ public class Main extends Game {
         if (getScreen() != null) {
             getScreen().dispose();
         }
+        joystick.dispose();
         batch.dispose();
         shapeRenderer.dispose();
         font.dispose();
