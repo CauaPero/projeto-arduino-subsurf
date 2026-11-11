@@ -162,17 +162,18 @@ public class GameScreen extends ScreenAdapter {
         tempoRestante -= delta;
         if (pontos >= nivel.metaPontos) {
             terminarNivel();
-        } else if (vidas <= 0) {
-            estado = SEM_VIDAS;
-            tituloLabel.setText("Acabaram as vidas!");
-            detalheLabel.setText("Pontos: " + pontos + " de " + nivel.metaPontos
-                + "     ENTER: tentar de novo     ESC: menu");
+            } else if (vidas <= 0) {
+                estado = SEM_VIDAS;
+                tempoFimDeJogo = 0f;
+                tituloLabel.setText("Acabaram as vidas!");
+                detalheLabel.setText("Pontos: " + pontos + " de " + nivel.metaPontos
+                    + "     ENTER: voltar ao menu");
         } else if (tempoRestante <= 0f) {
             tempoRestante = 0f;
             estado = TEMPO_ESGOTADO;
             tituloLabel.setText("Tempo esgotado!");
             detalheLabel.setText("Pontos: " + pontos + " de " + nivel.metaPontos
-                + "     ENTER: tentar de novo     ESC: menu");
+                + "     ENTER: tentar novamente     ESC: menu");
         }
 
         atualizarUI();
@@ -195,6 +196,7 @@ public class GameScreen extends ScreenAdapter {
             } else if (fruta.saiuDaTela()) {
                 if (!(fruta instanceof Coco)) {
                     game.perdaSound.play();
+                    vidas = Math.max(0, vidas - 1);
                 }
                 frutas.removeIndex(i);
                 novaFruta();
